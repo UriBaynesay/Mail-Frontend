@@ -1,3 +1,13 @@
+import { Header } from "../components/header"
+import { MailList } from "../components/mail-list"
+import { Sidebar } from "../components/sidebar"
+
 export const Homepage = () => {
-  return <h1>Hello from Gmail clone</h1>
+  return (
+    <>
+      <Header></Header>
+      <Sidebar></Sidebar>
+      <MailList></MailList>
+    </>
+  )
 }
