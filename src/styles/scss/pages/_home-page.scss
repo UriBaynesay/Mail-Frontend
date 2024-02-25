@@ -1,3 +1,11 @@
-.homepage-title{
-    color: aquamarine;
+@import '../components/header-list';
+@import '../components/mail-list';
+@import '../components/side-bar';
+
+
+.homepage-container{
+    display: grid;
+    grid-template-areas:  "sidebar header"
+    "sidebar mail-list" ;
+    grid-template-columns: minmax(auto,256px) auto;
 }
