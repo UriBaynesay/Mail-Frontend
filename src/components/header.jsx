@@ -1,5 +1,10 @@
 export const Header = () => (
   <header className="header-container">
-    <h3>hello from header</h3>
+    <section className="search-bar-container">
+      <h1>search bar</h1>
+    </section>
+    <div className="user-icon-container">
+      <h1>user icon</h1>
+    </div>
   </header>
 )
