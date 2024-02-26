@@ -1,4 +1,4 @@
-@import '../components/header-list';
+@import '../components/header';
 @import '../components/mail-list';
 @import '../components/side-bar';
 
@@ -6,7 +6,8 @@
 .homepage-container{
     height: 100%;
     display: grid;
-    grid-template-areas:  "sidebar header"
+    grid-template-areas:  "header header"
     "sidebar mail-list" ;
     grid-template-columns: minmax(auto,256px) auto;
+    grid-template-rows: 64px auto;
 }
