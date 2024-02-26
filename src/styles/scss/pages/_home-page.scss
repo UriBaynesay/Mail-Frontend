@@ -4,6 +4,7 @@
 
 
 .homepage-container{
+    height: 100%;
     display: grid;
     grid-template-areas:  "sidebar header"
     "sidebar mail-list" ;
