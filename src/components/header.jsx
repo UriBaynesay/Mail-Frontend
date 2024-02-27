@@ -1,12 +1,15 @@
+import hamburger from '../styles/svg/hamburger.svg'
+import mail from "../styles/svg/mail.svg"
+
 export const Header = () => (
   <header className="header-container">
     <section className="left-header-container">
       <section className="logo-container">
         <div className="hamburger-container">
-          <h4>hamburger</h4>
+          <img src={hamburger} alt="" />
         </div>
         <div className="logo-container">
-          <h4>logo</h4>
+          <img src={mail} alt="" />
         </div>
       </section>
       <section className="search-bar-container">

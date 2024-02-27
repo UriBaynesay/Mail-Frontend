@@ -6,6 +6,9 @@
     display: flex;
     .logo-container {
       display: flex;
+      img{
+        height: 100%;
+      }
     }
   }
 }
