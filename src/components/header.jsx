@@ -8,9 +8,10 @@ export const Header = () => (
         <div className="hamburger-container">
           <img src={hamburger} alt="" />
         </div>
-        <div className="logo-container">
+        <div className="logo-image-container">
           <img src={mail} alt="" />
         </div>
+        <h1>Mail</h1>
       </section>
       <section className="search-bar-container">
         <h1>search bar</h1>
