@@ -23,6 +23,20 @@
     }
   }
   .search-bar-container{
+    display: flex;
+    padding-left: 104px;
     flex-grow: 1;
+    .search-bar-form-container{
+      background-color: var(--secondary-blue);
+      display: flex;
+      align-items: center;
+      border-radius: 24px;
+      button{
+        padding: 6px;
+        svg{
+          width: 24px;
+        }
+      }
+    }
   }
 }
