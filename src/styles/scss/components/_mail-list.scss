@@ -1,3 +1,12 @@
 .mail-list-container{
     grid-area: mail;
+    .mail-list-previews-container{
+        .mail-preview{
+            display: flex;
+            justify-content: space-between;
+            .middle{
+                display: flex;
+            }
+        }
+    }
 }
