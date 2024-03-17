@@ -1,9 +1,18 @@
 .sidebar-container {
   grid-area: sidebar;
   .compose-btn {
+    margin-left: 8px;
     background-color: var(--main-blue);
     border-radius: 16px;
     padding: 24px;
     min-width: 96px;
+  }
+  .mail-type-container {
+    border-radius: 0 16px 16px 0;
+    height: 32px;
+    padding: 0 12px 0 26px;
+    &.active {
+      background-color: var(--darker-blue);
+    }
   }
 }
