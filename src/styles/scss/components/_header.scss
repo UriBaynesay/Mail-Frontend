@@ -1,13 +1,13 @@
 .header-container {
   grid-area: header;
   display: flex;
-  padding-block: 8px;
+  padding: 8px;
   .logo-container {
     display: flex;
     align-items: center;
     .hamburger-container {
-      width: 24px;
-      height: 24px;
+      width: 46px;
+      height: 46px;
       padding: 12px;
       border-radius: 50%;
       cursor: pointer;

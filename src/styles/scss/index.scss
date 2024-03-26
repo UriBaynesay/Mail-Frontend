@@ -2,8 +2,13 @@
 
 @import "./pages/home-page";
 
-body {
+*{
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: google-regular;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
