@@ -1,12 +1,6 @@
-@import "./pages/home-page";
+@import './base/variables';
 
-:root {
-  --main-gray: #f6f8fc;
-  --secondary-gray: #e8eaed;
-  --main-blue: #c2e7ff;
-  --secondary-blue: #eaf1fb;
-  --darker-blue:#d3e3fd;
-}
+@import "./pages/home-page";
 
 body {
   margin: 0;
@@ -43,7 +37,7 @@ body {
 
 .App {
   height: 100vh;
-  background-color: var(--main-gray);
+  background-color: $main-gray;
 }
 
 @font-face {
