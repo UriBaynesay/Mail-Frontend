@@ -13,7 +13,7 @@
       cursor: pointer;
       margin-inline: 4px;
       &:hover {
-        background-color: var(--secondary-gray);
+        background-color: $secondary-gray;
       }
     }
     .logo-image-container {
@@ -27,7 +27,7 @@
     padding-left: 104px;
     flex-grow: 1;
     .search-bar-form-container{
-      background-color: var(--secondary-blue);
+      background-color: $secondary-blue;
       display: flex;
       align-items: center;
       border-radius: 24px;
