@@ -2,9 +2,13 @@ import Axios from "axios"
 
 const axios = Axios.create({ withCredentials: true })
 const baseUrl =
-  process.env.CONFIG === "production"
-    ? "/api/"
-    : "http://localhost:3030/api/"
+  process.env.CONFIG === "production" ? "/api/" : "http://localhost:3030/api/"
+const requestTypes = {
+  get: "get",
+  post: "post",
+  put: "put",
+  remove: "delete",
+}
 
 /**
  *
@@ -30,4 +34,5 @@ async function sendRequest(type = "get", endpoint, data = {}) {
 
 export const httpService = {
   sendRequest,
+  requestTypes,
 }
