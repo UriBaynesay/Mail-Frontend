@@ -7,7 +7,9 @@ export const Sidebar = () => (
       <h4>Compose</h4>
     </button>
     <section className="filters-list-container">
-      {mailTypesList.map((type)=><MailTypePreview type={type}></MailTypePreview>)}
+      {mailTypesList.map((type) => (
+        <MailTypePreview key={type} type={type}></MailTypePreview>
+      ))}
     </section>
   </section>
 )
