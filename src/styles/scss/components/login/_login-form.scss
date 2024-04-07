@@ -1,0 +1,20 @@
+.login-form-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  width: 55vw;
+  height: 50vh;
+  padding-inline: 2vw;
+  border-radius: 28px;
+  .logo-container {
+    padding-top: 4vh;
+    img {
+      height: 48px;
+    }
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    padding-top: 12vh;
+  }
+}
