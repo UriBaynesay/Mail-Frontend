@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import hamburger from "../styles/svg/hamburger.svg"
 import mail from "../styles/svg/mail.svg"
 
@@ -39,9 +40,11 @@ export const Header = () => (
     </section>
 
     <section className="user-controls-container">
-      <div className="user-icon-container">
-        <h1>user icon</h1>
-      </div>
+      <Link to="login">
+        <div className="user-icon-container">
+          <h1>user icon</h1>
+        </div>
+      </Link>
     </section>
   </header>
 )
