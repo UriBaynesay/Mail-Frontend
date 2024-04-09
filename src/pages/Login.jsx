@@ -1,11 +1,15 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { useDispatch } from "react-redux"
+
+import { setUser } from "../store/slices/user"
 import { authenticationService } from "../services/authentication.service"
 import { LoginForm } from "../components/login/login-form"
 import mail from "../styles/svg/mail.svg"
 
 export const LoginPage = () => {
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const [isSignup, setIsSignup] = useState(false)
   const [formFields, setFormFields] = useState({
@@ -19,7 +23,7 @@ export const LoginPage = () => {
     setFormFields({ ...formFields, [target.name]: target.value })
   }
 
-  const onLogin = async (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault()
     let user
     if (isSignup) {
@@ -37,6 +41,7 @@ export const LoginPage = () => {
       )
     }
     if (user) {
+      dispatch(setUser(user))
       window.sessionStorage.setItem("user", JSON.stringify(user))
       navigate("/")
     }
@@ -54,7 +59,7 @@ export const LoginPage = () => {
           <h1>{isSignup ? "Sign Up" : "Login"}</h1>
         </section>
         <LoginForm
-          onLogin={onLogin}
+          onSubmit={onSubmit}
           onInput={onInput}
           password={formFields.password}
           nickname={formFields.nickname}

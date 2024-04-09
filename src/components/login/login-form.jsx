@@ -3,7 +3,7 @@ import TextField from "@mui/material/TextField"
 import Button from "@mui/material/Button"
 
 export const LoginForm = ({
-  onLogin,
+  onSubmit,
   onInput,
   onSetSignup,
   isSignup,
@@ -13,7 +13,7 @@ export const LoginForm = ({
   password,
 }) => {
   return (
-    <form onSubmit={onLogin}>
+    <form onSubmit={onSubmit}>
       <TextField
         fullWidth
         name="nickname"
