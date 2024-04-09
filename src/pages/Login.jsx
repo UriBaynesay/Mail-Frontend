@@ -1,9 +1,11 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 import { authenticationService } from "../services/authentication.service"
 import { LoginForm } from "../components/login/login-form"
 import mail from "../styles/svg/mail.svg"
 
 export const LoginPage = () => {
+  const navigate=useNavigate()
   const [nickname, setNickName] = useState("")
   const [password, setPassword] = useState("")
 
@@ -15,7 +17,10 @@ export const LoginPage = () => {
   const onLogin = async (e) => {
     e.preventDefault()
     const user = await authenticationService.login(nickname, password)
-    console.log(user)
+    if(user){
+      window.sessionStorage.setItem("user",JSON.stringify(user))
+      navigate("/")
+    }
   }
 
   return (
