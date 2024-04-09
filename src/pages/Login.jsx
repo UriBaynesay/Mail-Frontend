@@ -1,26 +1,49 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 import { authenticationService } from "../services/authentication.service"
 import { LoginForm } from "../components/login/login-form"
 import mail from "../styles/svg/mail.svg"
 
 export const LoginPage = () => {
-  const navigate=useNavigate()
-  const [nickname, setNickName] = useState("")
-  const [password, setPassword] = useState("")
+  const navigate = useNavigate()
+
+  const [isSignup, setIsSignup] = useState(false)
+  const [formFields, setFormFields] = useState({
+    firstName: "",
+    lastName: "",
+    nickname: "",
+    password: "",
+  })
 
   const onInput = ({ target }) => {
-    if (target.name === "nickname") {
-      setNickName(target.value)
-    } else setPassword(target.value)
+    setFormFields({ ...formFields, [target.name]: target.value })
   }
+
   const onLogin = async (e) => {
     e.preventDefault()
-    const user = await authenticationService.login(nickname, password)
-    if(user){
-      window.sessionStorage.setItem("user",JSON.stringify(user))
+    let user
+    if (isSignup) {
+      user = await authenticationService.signup(
+        formFields.firstName,
+        formFields.lastName,
+        formFields.nickname,
+        "",
+        formFields.password
+      )
+    } else {
+      user = await authenticationService.login(
+        formFields.nickname,
+        formFields.password
+      )
+    }
+    if (user) {
+      window.sessionStorage.setItem("user", JSON.stringify(user))
       navigate("/")
     }
+  }
+
+  const onSetSignup = () => {
+    setIsSignup(!isSignup)
   }
 
   return (
@@ -28,13 +51,17 @@ export const LoginPage = () => {
       <div className="login-form-container">
         <section className="logo-container">
           <img src={mail} alt="" />
-          <h1>Login</h1>
+          <h1>{isSignup ? "Sign Up" : "Login"}</h1>
         </section>
         <LoginForm
           onLogin={onLogin}
           onInput={onInput}
-          password={password}
-          nickname={nickname}
+          password={formFields.password}
+          nickname={formFields.nickname}
+          firstName={formFields.firstName}
+          lastName={formFields.lastName}
+          isSignup={isSignup}
+          onSetSignup={onSetSignup}
         ></LoginForm>
       </div>
     </main>
