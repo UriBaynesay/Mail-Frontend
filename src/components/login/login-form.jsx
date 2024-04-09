@@ -15,6 +15,7 @@ export const LoginForm = ({ onLogin, onInput, nickname, password }) => {
       />
       <TextField
         fullWidth
+        type="password"
         name="password"
         label="Password"
         variant="outlined"
