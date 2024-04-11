@@ -1,15 +1,14 @@
-@import '../components/header';
-@import '../components/mail-list';
-@import '../components/mail-view';
-@import '../components/side-bar';
+@import "../components/homepage/header";
+@import "../components/homepage/mail-list";
+@import "../components/homepage/mail-view";
+@import "../components/homepage/side-bar";
 
-
-.homepage-container{
-    height: 100%;
-    display: grid;
-    grid-template-areas:  "header header"
-    "sidebar mail" ;
-    grid-template-columns: minmax(auto,256px) auto;
-    grid-template-rows: 64px auto;
+.homepage-container {
+  height: 100%;
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar mail";
+  grid-template-columns: minmax(auto, 256px) auto;
+  grid-template-rows: 64px auto;
 }
-

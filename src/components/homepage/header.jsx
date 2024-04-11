@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
-import hamburger from "../styles/svg/hamburger.svg"
-import mail from "../styles/svg/mail.svg"
+import hamburger from "../../styles/svg/hamburger.svg"
+import mail from "../../styles/svg/mail.svg"
 
 export const Header = () => (
   <header className="header-container">
