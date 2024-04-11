@@ -1,7 +1,4 @@
-# Gmail Clone
+# Mail
 
-This project is a Gmail clone using React, Node and MongoDB
+This app is using React and Sass for
 
-## Description
-
-This directory will house the frontend part of the project
