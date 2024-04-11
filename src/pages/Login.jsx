@@ -27,18 +27,26 @@ export const LoginPage = () => {
     e.preventDefault()
     let user
     if (isSignup) {
-      user = await authenticationService.signup(
-        formFields.firstName,
-        formFields.lastName,
-        formFields.nickname,
-        "",
-        formFields.password
-      )
+      try {
+        user = await authenticationService.signup(
+          formFields.firstName,
+          formFields.lastName,
+          formFields.nickname,
+          "",
+          formFields.password
+        )
+      } catch (error) {
+        console.log(error)
+      }
     } else {
-      user = await authenticationService.login(
-        formFields.nickname,
-        formFields.password
-      )
+      try {
+        user = await authenticationService.login(
+          formFields.nickname,
+          formFields.password
+        )
+      } catch (error) {
+        console.log(error)
+      }
     }
     if (user) {
       dispatch(setUser(user))
