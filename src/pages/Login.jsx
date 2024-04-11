@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { useDispatch } from "react-redux"
 
 import { setUser } from "../store/slices/user"
+import { setAppMessage } from "../store/slices/app-message";
 import { authenticationService } from "../services/authentication.service"
 import { LoginForm } from "../components/login/login-form"
 import mail from "../styles/svg/mail.svg"
@@ -50,6 +51,7 @@ export const LoginPage = () => {
     }
     if (user) {
       dispatch(setUser(user))
+      dispatch(setAppMessage("Login Succesful"))
       window.sessionStorage.setItem("user", JSON.stringify(user))
       navigate("/")
     }

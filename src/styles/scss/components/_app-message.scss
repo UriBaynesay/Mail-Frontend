@@ -1,0 +1,9 @@
+.app-message-container {
+  position: fixed;
+  bottom: 8px;
+  left: -100px;
+  transition: 0.3s;
+  &.visible {
+    left: 8px;
+  }
+}
