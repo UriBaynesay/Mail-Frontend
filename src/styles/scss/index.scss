@@ -1,9 +1,11 @@
-@import './base/variables';
+@import "./base/variables";
 
 @import "./pages/home-page";
 @import "./pages/login-page";
 
-*{
+@import "./components/_app-message";
+
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
