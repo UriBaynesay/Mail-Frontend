@@ -28,7 +28,7 @@ async function sendRequest(type = "get", endpoint, data = {}) {
     return res.data
   } catch (error) {
     console.log(error)
-    throw error
+    throw error.response.data
   }
 }
 

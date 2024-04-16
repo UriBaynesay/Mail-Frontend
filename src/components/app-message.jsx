@@ -1,20 +1,27 @@
-import { useEffect } from "react"
-import { useSelector, useDispatch } from "react-redux"
+import { useEffect, useState } from "react"
 
-import { setAppMessage } from "../store/slices/app-message"
 
 export const AppMessage = () => {
-  const dispatch = useDispatch()
-  const message = useSelector((state) => state["app-message"])
+  const [message, setMessage] = useState("")
+  const [messageClass,setMessageClass]=useState("")
   useEffect(() => {
-    if (message) {
-      window.setTimeout(() => {
-        dispatch(setAppMessage(""))
+    let timer
+    const evListener = window.addEventListener("app-message", (ev) => {
+      const text = ev.detail
+      setMessage(text)
+      setMessageClass("visible")
+      timer=window.setTimeout(() => {
+        setMessageClass("")
       }, 3000)
+    })
+    return () => {
+      window.removeEventListener("app-message", evListener)
+      clearTimeout(timer)
     }
-  }, [message])
+  }, [])
+
   return (
-    <div className={`app-message-container ${message ? "visible" : ""}`}>
+    <div className={`app-message-container ${messageClass}`}>
       <h6>{message}</h6>
     </div>
   )
