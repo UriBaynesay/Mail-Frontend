@@ -51,7 +51,9 @@ export const LoginPage = () => {
     if (user) {
       dispatch(setUser(user))
       window.dispatchEvent(
-        new CustomEvent("app-message", { detail: "Login Succesful" })
+        new CustomEvent("app-message", {
+          detail: (isSignup ? "Signup " : "Login ") + "succesful",
+        })
       )
       window.sessionStorage.setItem("user", JSON.stringify(user))
       navigate("/")
