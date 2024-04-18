@@ -36,7 +36,7 @@ export const LoginPage = () => {
           formFields.password
         )
       } catch (error) {
-        console.log(error)
+        window.dispatchEvent(new CustomEvent("app-message", { detail: error }))
       }
     } else {
       try {
@@ -45,7 +45,7 @@ export const LoginPage = () => {
           formFields.password
         )
       } catch (error) {
-        console.log(error)
+        window.dispatchEvent(new CustomEvent("app-message", { detail: error }))
       }
     }
     if (user) {
