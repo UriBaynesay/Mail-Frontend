@@ -32,8 +32,7 @@ async function login(nickname, password) {
   }
 }
 
-async function logout(nickname) {
-  if (!nickname) return
+async function logout() {
   try {
     await httpService.sendRequest(
       httpService.requestTypes.post,

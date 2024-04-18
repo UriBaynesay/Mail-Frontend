@@ -55,7 +55,7 @@ export const LoginPage = () => {
           detail: (isSignup ? "Signup " : "Login ") + "succesful",
         })
       )
-      window.sessionStorage.setItem("user", JSON.stringify(user))
+      sessionStorage.setItem("user", JSON.stringify(user))
       navigate("/")
     }
   }
