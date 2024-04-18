@@ -14,6 +14,11 @@ export const Header = () => {
     await authenticationService.logout()
     dispatch(setUser(null))
     sessionStorage.removeItem("user")
+    dispatchEvent(
+      new CustomEvent("app-message", {
+        detail: "Logged out",
+      })
+    )
   }
 
   return (

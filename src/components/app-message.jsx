@@ -10,7 +10,7 @@ export const AppMessage = () => {
       const text = ev.detail
       setMessage(text)
       setMessageClass("visible")
-      timer=window.setTimeout(() => {
+      timer=setTimeout(() => {
         setMessageClass("")
       }, 3000)
     })

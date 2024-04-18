@@ -36,7 +36,7 @@ export const LoginPage = () => {
           formFields.password
         )
       } catch (error) {
-        window.dispatchEvent(new CustomEvent("app-message", { detail: error }))
+        dispatchEvent(new CustomEvent("app-message", { detail: error }))
       }
     } else {
       try {
@@ -45,12 +45,12 @@ export const LoginPage = () => {
           formFields.password
         )
       } catch (error) {
-        window.dispatchEvent(new CustomEvent("app-message", { detail: error }))
+        dispatchEvent(new CustomEvent("app-message", { detail: error }))
       }
     }
     if (user) {
       dispatch(setUser(user))
-      window.dispatchEvent(
+      dispatchEvent(
         new CustomEvent("app-message", {
           detail: (isSignup ? "Signup " : "Login ") + "succesful",
         })
