@@ -9,7 +9,7 @@ export const MailListPreview = ({ mail }) => {
         <span>{mail.text}</span>
       </div>
 
-      <span>{mail.date.toLocaleDateString()}</span>
+      <span>{new Date(mail.date).toLocaleDateString("he")}</span>
     </div>
   )
 }
