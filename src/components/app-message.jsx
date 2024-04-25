@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react"
 
-
 export const AppMessage = () => {
   const [message, setMessage] = useState("")
-  const [messageClass,setMessageClass]=useState("")
+  const [messageClass, setMessageClass] = useState("")
   useEffect(() => {
     let timer
     const evListener = window.addEventListener("app-message", (ev) => {
       const text = ev.detail
       setMessage(text)
       setMessageClass("visible")
-      timer=setTimeout(() => {
+      timer = setTimeout(() => {
         setMessageClass("")
       }, 3000)
     })

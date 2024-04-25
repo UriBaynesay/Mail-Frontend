@@ -1,17 +1,21 @@
-import {httpService} from './http.service';
+import { httpService } from "./http.service"
 
-const ENDPOINT="mail"
+const ENDPOINT = "mail"
 
-async function query(filter){
-    try {
-        const mails=await httpService.sendRequest(httpService.requestTypes.get,ENDPOINT,filter)
-        return mails
-    } catch (error) {
-        console.log(error)
-        throw error
-    }
+async function query(filter) {
+  try {
+    const mails = await httpService.sendRequest(
+      httpService.requestTypes.get,
+      ENDPOINT,
+      filter
+    )
+    return mails
+  } catch (error) {
+    console.log(error)
+    throw error
+  }
 }
 
-export const mailService={
-    query
+export const mailService = {
+  query,
 }
