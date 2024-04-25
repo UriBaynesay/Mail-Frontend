@@ -1,3 +1,12 @@
-.mail-view-container{
-    grid-area: mail
+.mail-view-container {
+  grid-area: mail;
+  background-color: white;
+  border-radius: 16px;
+  padding-inline: 16px;
+  margin-right: 16px;
+  svg {
+    height: 32px;
+    padding: 6px;
+    cursor: pointer;
+  }
 }

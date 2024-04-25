@@ -2,13 +2,13 @@ import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 
 import { authenticationService } from "../../services/authentication.service"
-import { setUser } from "../../store/slices/user";
+import { setUser } from "../../store/slices/user"
 import hamburger from "../../styles/svg/hamburger.svg"
 import mail from "../../styles/svg/mail.svg"
 
 export const Header = () => {
   const user = useSelector((storeState) => storeState.user)
-  const dispatch=useDispatch()
+  const dispatch = useDispatch()
 
   const logout = async () => {
     await authenticationService.logout()
