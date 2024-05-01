@@ -1,0 +1,12 @@
+.mail-list-previews-container {
+  display: flex;
+  .mail-preview {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .middle {
+      display: flex;
+    }
+  }
+}
