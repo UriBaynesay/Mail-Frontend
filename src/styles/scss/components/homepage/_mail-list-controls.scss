@@ -1,0 +1,12 @@
+.mail-list-controls-container{
+    height: 48px;
+    img{
+        border-radius: 50%;
+        width: 52px;
+        padding-inline: 16px;
+        cursor: pointer;
+        &:hover{
+            background-color: $secondary-gray;
+        }
+    }
+}
