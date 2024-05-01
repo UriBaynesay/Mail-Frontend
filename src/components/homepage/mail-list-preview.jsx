@@ -8,7 +8,6 @@ export const MailListPreview = ({ mail, onSelectMail }) => {
         <h4>{mail.title}-</h4>
         <span>{mail.text}</span>
       </div>
-
       <span>{new Date(mail.date).toLocaleDateString("he")}</span>
     </div>
   )
